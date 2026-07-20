@@ -44,27 +44,29 @@ export default function StockTable() {
                     </button>
                 </div>
             </div>
-            <table className={styles.table}>
-                <thead>
-                    <tr>
-                        <th>Ticker</th>
-                        <th>Company</th>
-                        <th>Price</th>
-                        <th>Change</th>
-                        <th>Volume</th>
-                        <th>Market Cap</th>
-                        <th>Action</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {mockStocks.map((stock) => (
-                        <StockTableRow
-                            key={stock.ticker}
-                            stock={stock}
-                        />
-                    ))}
-                </tbody>
-            </table>
+            <div className={styles.tableWrapper}>
+                <table className={styles.table}>
+                    <thead>
+                        <tr>
+                            <th>Ticker</th>
+                            <th>Company</th>
+                            <th>Price</th>
+                            <th>Change</th>
+                            <th>Volume</th>
+                            <th>Market Cap</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {mockStocks.map((stock) => (
+                            <StockTableRow
+                                key={stock.ticker}
+                                stock={stock}
+                            />
+                        ))}
+                    </tbody>
+                </table>
+            </div>
         </section>
     );
 }

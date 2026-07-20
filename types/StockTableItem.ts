@@ -6,3 +6,5 @@ export interface StockTableItem {
     volume: number;
     marketCap: number;
 }
+
+// hard code

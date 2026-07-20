@@ -83,3 +83,49 @@
 .bell {
     color: var(--color-icon)
 }
+
+.liveInfo{
+    display:flex;
+    align-items:center;
+    gap:8px;
+    margin-right:18px;
+    flex-shrink:0;
+}
+
+.liveDot{
+    width:8px;
+    height:8px;
+    border-radius:50%;
+    background:var(--color-live);
+    animation:pulse 1.5s infinite;
+}
+
+.liveText{
+    font-size:12px;
+    font-weight:700;
+    color:var(--color-live);
+}
+
+.time{
+    font-size:13px;
+    font-weight:600;
+    color:var(--text);
+    min-width:65px;
+}
+
+@keyframes pulse{
+    0%{
+        transform:scale(1);
+        opacity:1;
+    }
+
+    50%{
+        transform:scale(1.4);
+        opacity:.5;
+    }
+
+    100%{
+        transform:scale(1);
+        opacity:1;
+    }
+}
