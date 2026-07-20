@@ -1,0 +1,85 @@
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--bg-header);
+    padding: 12px 32px;
+    height: 60px;
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    flex-shrink: 0;
+}
+
+/* Logo */
+.container h1 {
+  font-size: 20px;
+  font-weight: 700;
+  color: #FFFFFF;
+  letter-spacing: -0.5px;
+  background: linear-gradient(135deg, #FFFFFF 0%, #787B86 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+  text-align: center;
+}
+
+/*Search*/
+.search {
+  flex: 1;
+  max-width: 480px;
+  margin: 0 24px;
+}
+
+.item {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.item input {
+    border: 1px solid var(--color-border);
+    padding: 5px 44px 5px 16px; 
+    font-size: 14px;
+    font-family: inherit;
+    width: 100%;
+    box-sizing: border-box;
+    border-radius: 30px;
+    color: var(--text);
+}
+
+.item input::placeholder {
+  color: var(--text);
+  font-weight: 400;
+}
+
+.item svg {
+    position: absolute;
+    right: 14px;
+    top: 50%;
+    width: 18px;
+    height: 18px;
+    transform: translateY(-50%);
+    color: var(--color-icon)
+}
+
+/*icon*/
+.icon {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 25px
+}
+
+.user {
+    background-color: grey;
+    padding: 15px;
+    border-radius: 30px;
+    color: var(--color-icon)
+}
+
+.bell {
+    color: var(--color-icon)
+}

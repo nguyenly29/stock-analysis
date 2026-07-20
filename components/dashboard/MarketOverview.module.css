@@ -1,0 +1,57 @@
+.container{
+    margin-top:24px;
+    background:var(--bg-card);
+    border-radius:var(--radius);
+    padding:24px;
+    box-shadow:var(--shadow);
+}
+
+.header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    margin-bottom:20px;
+}
+
+.header h2{
+    font-size:20px;
+    font-weight:600;
+}
+
+.filter{
+    display:flex;
+    gap:10px;
+}
+
+.filter button{
+    border:none;
+    background:transparent;
+    padding:8px 14px;
+    border-radius:8px;
+    cursor:pointer;
+    color:var(--text-secondary);
+}
+
+.active{
+    background:var(--color-up);
+    color:white !important;
+}
+
+.chartContainer{
+    height:250px;
+    width: 100%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    border:1px dashed var(--color-border);
+    border-radius:10px;
+}
+
+.chartContainer *:focus {
+    outline: none;
+}
+
+.chartContainer *:focus-visible {
+    outline: none;
+}

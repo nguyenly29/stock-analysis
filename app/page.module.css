@@ -1,0 +1,38 @@
+.dashboard{
+    display:flex;
+    flex-direction:column;
+    gap:24px;
+}
+
+.content{
+    display:grid;
+    grid-template-columns:2fr 1fr;
+    gap:24px;
+    align-items:start;
+}
+
+.leftColumn{
+    display:flex;
+    flex-direction:column;
+    gap:24px;
+}
+
+.rightColumn{
+    display:flex;
+    flex-direction:column;
+    gap:24px;
+    height: 100%;
+}
+
+.placeholder{
+    min-height:260px;
+    background:var(--bg-card);
+    border-radius:var(--radius);
+    box-shadow:var(--shadow);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    color:var(--text-secondary);
+    font-weight:600;
+    height: 180px;
+}

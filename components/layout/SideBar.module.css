@@ -1,0 +1,164 @@
+/* Lấy biến từ :root của bạn, nhưng thêm fallback cho dark mode */
+.container {
+  width: 150px;
+  min-height:calc(100vh - 60px);
+  background-color: var(--bg-sidebar, #0D1117);
+  color: var(--text-secondary, #787B86);
+  padding: 16px 12px;
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid #2A2E39;
+  position: sticky;
+  top: 0;
+  overflow-y: auto;
+  flex-shrink: 0;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+/* Các mục menu chung */
+.dashboard,
+.stock,
+.watchlist,
+.setting {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 10px 12px;
+  margin-bottom: 4px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  color: var(--text-secondary, #787B86);
+  text-decoration: none;
+  background: transparent;
+  border: none;
+  width: 100%;
+}
+
+/* Icon trong menu */
+.dashboard svg,
+.stock svg,
+.watchlist svg,
+.setting svg {
+  width: 20px;
+  height: 20px;
+  color: var(--text-secondary, #787B86);
+  transition: all 0.2s ease-in-out;
+  flex-shrink: 0;
+}
+
+/* Link trong menu */
+.dashboard a,
+.stock a,
+.watchlist a,
+.setting a {
+  color: var(--text-secondary, #787B86);
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.2s ease-in-out;
+  flex: 1;
+}
+
+/* Hover cho menu */
+.dashboard:hover,
+.stock:hover,
+.watchlist:hover,
+.setting:hover {
+  background-color: #1E222D;
+  border-radius: 8px;
+}
+
+.dashboard:hover svg,
+.stock:hover svg,
+.watchlist:hover svg,
+.setting:hover svg {
+  color: #FFFFFF;
+}
+
+.dashboard:hover a,
+.stock:hover a,
+.watchlist:hover a,
+.setting:hover a {
+  color: #FFFFFF;
+}
+
+/* Active state (khi đang ở trang đó) */
+.dashboard.active,
+.stock.active,
+.watchlist.active,
+.setting.active {
+  background-color: #1E222D;
+  border-left: 3px solid var(--color-up, #00B1A4);
+}
+
+.dashboard.active svg,
+.stock.active svg,
+.watchlist.active svg,
+.setting.active svg {
+  color: var(--color-up, #00B1A4);
+}
+
+.dashboard.active a,
+.stock.active a,
+.watchlist.active a,
+.setting.active a {
+  color: #FFFFFF;
+}
+
+/* Tách Settings xuống cuối sidebar */
+/* .setting {
+  margin-top: auto;
+  border-top: 1px solid #2A2E39;
+  padding-top: 20px;
+} */
+
+/* Responsive cho màn hình nhỏ */
+@media (max-width: 768px) {
+  .container {
+    width: 70px;
+    padding: 16px 8px;
+    align-items: center;
+  }
+
+  .container h1 {
+    font-size: 12px;
+    padding-bottom: 16px;
+    margin-bottom: 16px;
+    text-align: center;
+    background: none;
+    -webkit-text-fill-color: #FFFFFF;
+    color: #FFFFFF;
+  }
+
+  .dashboard,
+  .stock,
+  .watchlist,
+  .setting {
+    padding: 12px;
+    justify-content: center;
+    gap: 0;
+  }
+
+  .dashboard a,
+  .stock a,
+  .watchlist a,
+  .setting a {
+    display: none; /* Ẩn text khi sidebar thu nhỏ */
+  }
+
+  .dashboard svg,
+  .stock svg,
+  .watchlist svg,
+  .setting svg {
+    width: 24px;
+    height: 24px;
+    margin: 0 auto;
+  }
+
+  .setting {
+    border-top: none;
+    padding-top: 0;
+    margin-top: auto;
+  }
+}

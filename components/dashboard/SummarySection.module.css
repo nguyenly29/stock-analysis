@@ -1,0 +1,56 @@
+.container{
+    background: var(--bg-card);
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    border: 1px solid var(--color-border);
+    padding: 12px 16px;
+}
+
+.header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    font-weight: 600;
+}
+
+.header h2{
+    font-size:18px;
+    color:var(--text-main);
+}
+
+.stats{
+    display:grid;
+    grid-template-columns:repeat(5,1fr);
+    gap:18px;
+}
+
+.item{
+    display:flex;
+    flex-direction:column;
+    gap:6px;
+}
+
+.label{
+    font-size:12px;
+    color:var(--text-secondary);
+    text-transform:uppercase;
+    letter-spacing:.5px;
+}
+
+.value{
+    font-size:24px;
+    font-weight:700;
+    color:var(--text-main);
+}
+
+.valueGreen{
+    font-size:24px;
+    font-weight:700;
+    color:var(--color-up);
+}
+
+.valueRed{
+    font-size:24px;
+    font-weight:700;
+    color:var(--color-down);
+}

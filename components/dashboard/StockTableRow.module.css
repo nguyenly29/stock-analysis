@@ -1,0 +1,28 @@
+.row td{
+    padding:16px;
+    border-bottom:1px solid var(--color-border);
+    transition:.2s;
+}
+
+.row:hover{
+    background:#f8fafc;
+}
+
+.up{
+    color:var(--color-up);
+    font-weight:600;
+}
+
+.down{
+    color:var(--color-down);
+    font-weight:600;
+}
+
+.row button{
+    border:none;
+    background:var(--color-up);
+    color:white;
+    padding:8px 14px;
+    border-radius:8px;
+    cursor:pointer;
+}
