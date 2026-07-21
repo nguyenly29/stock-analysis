@@ -1,0 +1,96 @@
+.container{
+    background: var(--bg-card);
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    height: 82vh
+}
+
+.title{
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--text-main);
+}
+
+.headerRow{
+    display:flex;
+    justify-content:end;
+    gap: 50px;
+    font-size:12px;
+    color:var(--text-secondary);
+    font-weight:600;
+}
+
+.section{
+    display: flex;
+    flex-direction: column;
+    padding: 14px 0;
+}
+
+.section:not(:last-child){
+    border-bottom: 1px solid var(--color-border);
+}
+
+.sectionTitle{
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text-secondary);
+    margin-bottom: 6px;
+}
+
+.list{
+    display: flex;
+    flex-direction: column;
+}
+
+.row{
+    display: grid;
+    grid-template-columns: 60px 1fr auto;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 0;
+    transition: .2s;
+}
+
+.row:hover{
+    background: rgba(0,0,0,.03);
+    border-radius: 6px;
+    padding-left: 6px;
+    padding-right: 6px;
+}
+
+.ticker{
+    font-weight: 700;
+    font-size: 14px;
+    color: var(--text-main);
+}
+
+.price{
+    text-align: right;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text-main);
+}
+
+.volume{
+    text-align: right;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text-main);
+}
+
+.up{
+    text-align: right;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--color-up);
+}
+
+.down{
+    text-align: right;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--color-down);
+}

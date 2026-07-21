@@ -24,20 +24,3 @@
     height: auto;
     margin-top: 25px
 }
-
-.rightColumn > *{
-    flex: 1;
-}
-
-.placeholder{
-    min-height:260px;
-    background:var(--bg-card);
-    border-radius:var(--radius);
-    box-shadow:var(--shadow);
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    color:var(--text-secondary);
-    font-weight:600;
-    height: 180px;
-}

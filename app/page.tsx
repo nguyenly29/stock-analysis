@@ -7,6 +7,7 @@ import { DashboardSummary } from "@/types/DashboardSummary";
 import { useEffect, useState } from "react";
 import style from "./page.module.css"
 import MarketTicker from "@/components/dashboard/MarketTicker";
+import MarketMovers from "@/components/dashboard/MarketMovers";
 
 export default function OverView(){
     const [summary, setSummary] = useState<DashboardSummary | null>();
@@ -33,9 +34,7 @@ export default function OverView(){
                 </div>
                 <div className={style.rightColumn}>
                     <div className={style.placeholder}>
-                        Top Gainers
-                        Top Lovers
-                        Top Volume
+                        <MarketMovers/>
                     </div>
                 </div>
             </div>

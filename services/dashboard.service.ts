@@ -21,3 +21,4 @@ export const getTopVolume = async (): Promise<RealtimePrice[]> => {
     const response = await api.get<RealtimePrice[]>("/dashboard/top-volume");
     return response.data;
 };
+

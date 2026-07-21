@@ -55,3 +55,11 @@
 .chartContainer *:focus-visible {
     outline: none;
 }
+
+.loading{
+    height:320px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    color:var(--text-secondary);
+}

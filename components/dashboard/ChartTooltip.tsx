@@ -8,11 +8,7 @@ interface ChartTooltipProps {
     label?: string;
 }
 
-export default function ChartTooltip({
-    active,
-    payload,
-    label,
-}: ChartTooltipProps) {
+export default function ChartTooltip({active,payload,label,}: ChartTooltipProps) {
     if (!active || !payload || payload.length === 0) {
         return null;
     }
@@ -27,29 +23,29 @@ export default function ChartTooltip({
 
             <div className={styles.row}>
                 <span>Open</span>
-                <span>{data.open}</span>
+                <span>{data.open ?? "--"}</span>
             </div>
 
             <div className={styles.row}>
                 <span>High</span>
-                <span>{data.high}</span>
+                <span>{data.high ?? "--"}</span>
             </div>
 
             <div className={styles.row}>
                 <span>Low</span>
-                <span>{data.low}</span>
+                <span>{data.low ?? "--"}</span>
             </div>
 
             <div className={styles.row}>
                 <span>Close</span>
-                <span>{data.close}</span>
+                <span>{data.close ?? "--"}</span>
             </div>
 
             <div className={styles.divider}></div>
 
             <div className={styles.row}>
                 <span>Volume</span>
-                <span>{data.volume.toLocaleString()}</span>
+                <span>{data?.volume?.toLocaleString()??"0"}</span>
             </div>
         </div>
     );

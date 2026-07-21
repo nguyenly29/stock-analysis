@@ -12,7 +12,7 @@ export default function StockTable() {
         <section className={styles.container}>
             <div className={styles.header}>
                 <div>
-                    <h2>Stock Market</h2>
+                    <h2>Thị trường chứng khoán</h2>
                     <p className={styles.lastUpdate}>
                         Last update:
                         {" "}
