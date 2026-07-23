@@ -1,17 +1,28 @@
 .container{
     background: var(--bg-card);
-    border-radius: 12px;
     box-shadow: var(--shadow);
     padding: 10px;
     display: flex;
     flex-direction: column;
-    height: 82vh
+    /* height: 82vh */
+    height: 88vh;
+    border-radius: 14px;
 }
 
 .title{
     font-size: 18px;
     font-weight: 700;
     color: var(--text-main);
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.title svg {
+    color: var(--text);
+    background-color: var(--color-blue);
+    padding: 5px;
+    border-radius: 50%;
 }
 
 .headerRow{

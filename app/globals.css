@@ -29,6 +29,9 @@
     --color-border: #e5e7eb;
     /* Shadow */
     --shadow: 0 2px 8px rgba(0,0,0,.08);
+    /*Color*/
+    --color-blue: #3B82F6;
+    --color-gray: #9CA3AF;
 }
 
 body{

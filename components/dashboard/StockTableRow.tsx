@@ -1,19 +1,23 @@
-import { StockTableItem } from "@/types/StockTableItem";
 import styles from "./StockTableRow.module.css";
+import { RealtimePrice } from "@/types/RealtimePrice";
 
 interface StockTableRowProps {
-    stock: StockTableItem;
+    stock: RealtimePrice;
 }
 
 export default function StockTableRow({
     stock,
 }: StockTableRowProps) {
-
     return (
         <tr className={styles.row}>
             <td>{stock.ticker}</td>
+
             <td>{stock.companyName}</td>
-            <td>{stock.currentPrice.toLocaleString()} VND</td>
+
+            <td>
+                {stock.currentPrice.toLocaleString("vi-VN")} VND
+            </td>
+
             <td
                 className={
                     stock.changePercent >= 0
@@ -21,13 +25,24 @@ export default function StockTableRow({
                         : styles.down
                 }
             >
+                {stock.change > 0 ? "+" : ""}
+                {stock.change.toFixed(2)}
+                {" ("}
                 {stock.changePercent > 0 ? "+" : ""}
-                {stock.changePercent}%
+                {stock.changePercent.toFixed(2)}%)
             </td>
-            <td>{stock.volume.toLocaleString()}</td>
+
             <td>
-                {(stock.marketCap / 1_000_000_000).toFixed(1)} B
+                {stock.volume.toLocaleString("vi-VN")}
             </td>
+
+            <td>
+                {(stock.marketCap / 1_000_000_000).toLocaleString("vi-VN", {
+                    maximumFractionDigits: 1,
+                })}{" "}
+                B
+            </td>
+
             <td>
                 <button className={styles.detailBtn}>
                     View

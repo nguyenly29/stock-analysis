@@ -21,3 +21,4 @@ export const getStockHistory = async (
     const response = await api.get<PriceHistoryPoint[]>(`/stocks/${ticker}/history`);
     return response.data;
 };
+

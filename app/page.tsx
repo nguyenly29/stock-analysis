@@ -2,31 +2,33 @@
 
 import MarketOverview from "@/components/dashboard/MarketOverview";
 import StockTable from "@/components/dashboard/StockTable";
-import { getSummary } from "@/services/dashboard.service";
-import { DashboardSummary } from "@/types/DashboardSummary";
 import { useEffect, useState } from "react";
 import style from "./page.module.css"
 import MarketTicker from "@/components/dashboard/MarketTicker";
 import MarketMovers from "@/components/dashboard/MarketMovers";
+import { MarketIndexItem } from "@/types/MarketIndexItem";
+import { getIndexes, } from "@/services/market.service";
 
 export default function OverView(){
-    const [summary, setSummary] = useState<DashboardSummary | null>();
+    const [indexes, setIndexes] = useState<MarketIndexItem[]>([]);
     useEffect(() => {
-        const fetchData = async() => {
+        const fetchData = async () => {
             try {
-                const data = await getSummary();
-                setSummary(data)
-            } catch (error) {
+                const data = await getIndexes();
+                setIndexes(data);
+            } catch (error){
                 console.error(error);
             }
         }
         fetchData();
-    }, [])
+    }, []);
     return(
         <div className={style.dashboard}>
-            {summary && (
-                <MarketTicker summary={summary} />
-            )}
+            <div className={style.indexes}>
+                {indexes &&(
+                    <MarketTicker indexes={indexes} />
+                )}
+            </div>
             <div className={style.content}>
                 <div className={style.leftColumn}>
                     <MarketOverview />

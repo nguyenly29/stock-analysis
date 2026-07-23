@@ -2,7 +2,6 @@
     display:flex;
     flex-direction:column;
 }
-
 .content{
     display:grid;
     grid-template-columns:2fr 1fr;
@@ -22,5 +21,6 @@
     flex-direction:column;
     gap:24px;
     height: auto;
-    margin-top: 25px
+    /* margin-top: 25px */
+    margin-top: -25px;
 }

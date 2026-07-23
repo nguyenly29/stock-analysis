@@ -6,6 +6,7 @@
     padding:20px;
     max-height: 360px;
     overflow-y: auto;
+    border-radius: 14px;
 }
 
 .header{
@@ -25,6 +26,19 @@
 
     flex-shrink: 0;
 
+}
+
+.title {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.title svg {
+    color: var(--text);
+    background-color: var(--color-blue);
+    padding: 5px;
+    border-radius: 50%;
 }
 
 .lastUpdate{

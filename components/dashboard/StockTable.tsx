@@ -1,18 +1,59 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import styles from "./StockTable.module.css";
 import StockTableRow from "./StockTableRow";
-import { mockStocks } from "@/data/mock-stocks";
+import { Link } from "lucide-react";
+import { RealtimePrice } from "@/types/RealtimePrice";
+import { getRealtimeStocks } from "@/services/stock.service";
 
 export default function StockTable() {
     const [isLive, setIsLive] = useState(true);
-    const [lastUpdate] = useState<Date | null>(null);
+    const [lastUpdate, setLastUpdate] = useState<Date | null>(null);
+    const [stocks, setStocks] = useState<RealtimePrice[]>([]);
+    const [loading, setLoading] = useState(true);
+    useEffect (() => {
+        const fetchStocks = async() => {
+            try {
+                const data = await getRealtimeStocks();
+                setStocks(data);
+                if(data.length > 0){
+                    setLastUpdate(new Date(data[0].updatedAt));
+                }
+            } catch (error){
+                console.error(error);
+            } finally {
+                setLoading(false);
+            }
+        };
+        fetchStocks();
+    }, []);
+    if(loading){
+        return (
+            <div className={styles.container}>
+                <div className={styles.header}>
+                    <div>
+                        <div className={styles.title}>
+                            <Link/>
+                            <h2>Thị trường chứng khoán</h2>
+                        </div>
+                        <div className={styles.loading}>
+                            Đang tải dữ liệu...
+                        </div>
+                    </div>
+                </div>
+            </div>
+        )
+    }
     return (
         <section className={styles.container}>
             <div className={styles.header}>
                 <div>
-                    <h2>Thị trường chứng khoán</h2>
+                    <div className={styles.title}>
+                        <Link/>
+                        <h2>Thị trường chứng khoán</h2>
+                    </div>
+                    
                     <p className={styles.lastUpdate}>
                         Last update:
                         {" "}
@@ -21,7 +62,7 @@ export default function StockTable() {
                             : "--:--:--"}
                     </p>
                 </div>
-                <div className={styles.livePanel}>
+                {/* <div className={styles.livePanel}>
                     <span className={styles.liveStatus}>
                         <span
                             className={`${styles.dot} ${
@@ -42,7 +83,7 @@ export default function StockTable() {
                     >
                         {isLive ? "ON" : "OFF"}
                     </button>
-                </div>
+                </div> */}
             </div>
             <div className={styles.tableWrapper}>
                 <table className={styles.table}>
@@ -58,7 +99,7 @@ export default function StockTable() {
                         </tr>
                     </thead>
                     <tbody>
-                        {mockStocks.map((stock) => (
+                        {stocks.map((stock) => (
                             <StockTableRow
                                 key={stock.ticker}
                                 stock={stock}

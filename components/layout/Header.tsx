@@ -5,11 +5,21 @@ import style from "./Header.module.css";
 import { useEffect, useState } from "react";
 
 export default function Header (){
-    const [currentTime, setCurrentTime] = useState(new Date());
+    // const [currentTime, setCurrentTime] = useState(new Date());
+    const [currentTime, setCurrentTime] = useState<Date | null>(null);
+    // useEffect(() => {
+    //     const timer = setInterval(() => {
+    //         setCurrentTime(new Date());
+    //     }, 1000);
+    //     return () => clearInterval(timer);
+    // }, []);
     useEffect(() => {
+        setCurrentTime(new Date());
+
         const timer = setInterval(() => {
             setCurrentTime(new Date());
         }, 1000);
+
         return () => clearInterval(timer);
     }, []);
     return (
@@ -27,8 +37,13 @@ export default function Header (){
                     <span className={style.liveText}>
                         LIVE
                     </span>
-                    <span className={style.time}>
+                    {/* <span className={style.time}>
                         {currentTime.toLocaleTimeString("vi-VN")}
+                    </span> */}
+                    <span className={style.time}>
+                        {currentTime
+                            ? currentTime.toLocaleTimeString("vi-VN")
+                            : "--:--:--"}
                     </span>
                 </div>
                 <div className={style.bell}>

@@ -1,23 +1,28 @@
 "use client";
 
-import { PriceHistoryPoint } from "@/types/PriceHistoryPoint";
-import api from "@/lib/api";
 import { useState, useEffect } from "react";
 import styles from "./MarketOverview.module.css";
 import { ResponsiveContainer, AreaChart, Area, XAxis, YAxis, Tooltip, CartesianGrid } from "recharts";
 import ChartTooltip from "./ChartTooltip";
-import { Volume } from "lucide-react";
+import { MarketHistory } from "@/types/MarketHistory";
+import { Link } from "lucide-react";
+import { getIndexes, getIndexesHistory } from "@/services/market.service";
+import { MarketIndexItem } from "@/types/MarketIndexItem";
 export default function MarketOverview() {
-    const [history, setHistory] = useState<PriceHistoryPoint[]>([]);
+    const [history, setHistory] = useState<MarketHistory[]>([]);
     const [loading, setLoading] = useState(true);
+    const [indexes, setIndexes] = useState<MarketIndexItem[]>([]);
     useEffect(() => {
     const fetchHistory = async () => {
         try {
-            const data = await api.get<PriceHistoryPoint[]>(
-                "/Stocks/VIC/history"
-            );
-
-            setHistory(data.data);
+            // const data = await api.get<MarketHistory[]>("/Market/history"); // data history
+            // const indexesData =  await api.get<MarketHistory[]>("/Market/Indexes");
+            // setHistory(data.data);
+            // setIndexes(indexes.data);
+            const historyData = await getIndexesHistory();
+            const indexesData = await getIndexes();
+            setHistory(historyData);
+            setIndexes(indexesData);
         } catch (err) {
             console.error("Cannot load chart", err);
         } finally {
@@ -32,12 +37,12 @@ export default function MarketOverview() {
             hour: "2-digit",
             minute: "2-digit",
         }),
-        open: item.open,
-        high: item.high,
-        low: item.low,
-        close: item.close,
-        volume: item.volume
+        value: item.value
     }));
+    const vnIndex = indexes.find(item => item.symbol === "VNINDEX");
+    const isUp = (vnIndex?.change ?? 0) >= 0;
+    const lineColor = isUp? "var(--color-up)": "var(--color-down)";
+    console.log(chartData)
     if (loading) {
         return (
             <section className={styles.container}>
@@ -51,7 +56,10 @@ export default function MarketOverview() {
     return (
         <section className={styles.container}>
             <div className={styles.header}>
-                <h2>Tổng quan thị trường (Giả định VIC)</h2>
+                <div className={styles.title}>
+                    <Link size={25}/>
+                    <h2>Tổng quan thị trường</h2>
+                </div>
 
                 <div className={styles.filter}>
                     <button className={styles.active}>1D</button>
@@ -66,13 +74,13 @@ export default function MarketOverview() {
                     <AreaChart data={chartData} margin={{top:10,right:20,left:10,bottom:10}}>
                         <defs>
                             <linearGradient id="priceGradient" x1="0" y1="0" x2="0" y2="1">
-                                <stop offset="5%" stopColor="#00B1A4" stopOpacity={0.35} />
-                                <stop offset="95%" stopColor="#00B1A4" stopOpacity={0} />
+                                <stop offset="5%" stopColor={lineColor} stopOpacity={0.35} />
+                                <stop offset="95%" stopColor={lineColor} stopOpacity={0} />
                             </linearGradient>
                         </defs>
 
                         <CartesianGrid
-                            stroke="#e5e7eb"
+                            stroke="var(--color-gray)"
                             strokeDasharray="3 3"
                             vertical={false}
                         />
@@ -90,15 +98,15 @@ export default function MarketOverview() {
                             tickMargin={20}
                             width={45}
                             axisLine={false}
-                            domain={["dataMin - 1", "dataMax + 1"]}
+                            domain={["auto", "auto"]}
                         />
 
-                        <Tooltip  content={<ChartTooltip/>}/>
+                        <Tooltip  content={<ChartTooltip />} cursor={{stroke:"var(--color-up)", strokeWidth:1}}/>
 
                         <Area
                             type="monotone"
-                            dataKey="close"
-                            stroke="#00B1A4"
+                            dataKey="value"
+                            stroke={lineColor}
                             strokeWidth={3}
                             fill="url(#priceGradient)"
                         />

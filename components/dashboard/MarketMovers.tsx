@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import api from "@/lib/api";
 import { RealtimePrice } from "@/types/RealtimePrice";
 import style from "./MarketMovers.module.css";
-import { TrendingDown, TrendingUp } from "lucide-react";
+import { Link, TrendingDown, TrendingUp } from "lucide-react";
 
 export default function MarketMovers() {
     const [gainers, setGainers] = useState<RealtimePrice[]>([]);
@@ -39,9 +39,10 @@ export default function MarketMovers() {
     return (
         <section className={style.container}>
 
-            <h2 className={style.title}>
-                Biến động thị trường
-            </h2>
+            <div className={style.title}>
+                <Link size={25}/>
+                <h2>Biến động thị trường</h2>
+            </div>
 
             <div className={style.section}>
                 <div className={style.sectionTitle}>

@@ -21,31 +21,11 @@ export default function ChartTooltip({active,payload,label,}: ChartTooltipProps)
                 {label}
             </div>
 
-            <div className={styles.row}>
-                <span>Open</span>
-                <span>{data.open ?? "--"}</span>
-            </div>
-
-            <div className={styles.row}>
-                <span>High</span>
-                <span>{data.high ?? "--"}</span>
-            </div>
-
-            <div className={styles.row}>
-                <span>Low</span>
-                <span>{data.low ?? "--"}</span>
-            </div>
-
-            <div className={styles.row}>
-                <span>Close</span>
-                <span>{data.close ?? "--"}</span>
-            </div>
-
             <div className={styles.divider}></div>
 
             <div className={styles.row}>
-                <span>Volume</span>
-                <span>{data?.volume?.toLocaleString()??"0"}</span>
+                <span>Market Value</span>
+                <span>{data?.value?.toLocaleString()??"--"}</span>
             </div>
         </div>
     );
