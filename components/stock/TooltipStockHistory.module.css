@@ -1,0 +1,55 @@
+.container {
+    background: var(--bg-card);
+    border: 1px solid var(--color-border);
+    border-radius: 12px;
+    padding: 12px 14px;
+    min-width: 180px;
+    box-shadow: var(--shadow);
+}
+
+.time {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text-main);
+    margin-bottom: 10px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--color-border);
+}
+
+.item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 24px;
+    margin-bottom: 8px;
+    font-size: 13px;
+}
+
+.label {
+    color: var(--text-secondary);
+}
+
+.value {
+    font-weight: 600;
+    color: var(--text-main);
+}
+
+.volume {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 24px;
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px solid var(--color-border);
+    font-size: 13px;
+}
+
+.volume .label {
+    color: var(--text-secondary);
+}
+
+.volume .value {
+    font-weight: 600;
+    color: var(--text-main);
+}

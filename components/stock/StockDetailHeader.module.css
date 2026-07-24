@@ -1,0 +1,74 @@
+.container{
+    background: var(--bg-card);
+    border-radius: 16px;
+    padding: 24px;
+    box-shadow: var(--shadow);
+
+    margin-bottom: 24px;
+}
+
+.topBar{
+    margin-bottom: 20px;
+}
+
+.backButton{
+    display:flex;
+    align-items:center;
+    gap:8px;
+
+    width:fit-content;
+
+    text-decoration:none;
+
+    color:var(--text-secondary);
+
+    transition:.2s;
+}
+
+.backButton:hover{
+
+    color:var(--color-blue);
+
+}
+
+.content{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+}
+
+.companyName{
+
+    color:var(--text-main);
+
+    font-size:34px;
+
+    font-weight:700;
+
+    margin-bottom:10px;
+
+}
+
+.info{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    color:var(--text-secondary);
+
+    font-size:15px;
+
+}
+
+.separator{
+
+    color:var(--color-gray);
+
+}

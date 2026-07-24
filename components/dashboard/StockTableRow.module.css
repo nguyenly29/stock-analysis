@@ -18,7 +18,7 @@
     font-weight:600;
 }
 
-.row button{
+.row a{
     border:none;
     background:var(--color-up);
     color:white;

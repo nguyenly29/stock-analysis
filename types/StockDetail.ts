@@ -11,6 +11,7 @@ export interface StockDetail {
     change: number;
     changePercent: number;
     volume: number;
+    
 
     website: string;
     description: string;

@@ -1,0 +1,99 @@
+.card{
+
+    background: var(--bg-card);
+
+    border-radius:16px;
+
+    box-shadow: var(--shadow);
+
+    padding:24px;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    gap:40px;
+
+    margin-bottom:24px;
+
+}
+
+.left{
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+}
+
+.price{
+
+    font-size:40px;
+
+    font-weight:700;
+
+    color:var(--text-main);
+
+    margin-bottom:10px;
+
+}
+
+.up{
+
+    color:var(--color-up);
+
+    font-size:22px;
+
+    font-weight:600;
+
+}
+
+.down{
+
+    color:var(--color-down);
+
+    font-size:22px;
+
+    font-weight:600;
+
+}
+
+.right{
+
+    flex:1;
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:20px;
+
+}
+
+.item{
+
+    display:flex;
+
+    flex-direction:column;
+
+}
+
+.item span{
+
+    color:var(--text-secondary);
+
+    margin-bottom:6px;
+
+    font-size:14px;
+
+}
+
+.item strong{
+
+    font-size:20px;
+
+    color:var(--text-main);
+
+}

@@ -1,3 +1,4 @@
+import Link from "next/link";
 import styles from "./StockTableRow.module.css";
 import { RealtimePrice } from "@/types/RealtimePrice";
 
@@ -44,9 +45,9 @@ export default function StockTableRow({
             </td>
 
             <td>
-                <button className={styles.detailBtn}>
+                <Link href={`/stocks/${stock.ticker}`} className={styles.detailBtn}>
                     View
-                </button>
+                </Link>
             </td>
         </tr>
     );
