@@ -1,3 +1,4 @@
+import StockCandlestickChart from "@/components/stock/StockCandlestickChart";
 import StockDetailHeader from "@/components/stock/StockDetailHeader";
 import StockHistoryChart from "@/components/stock/StockHistoryChart";
 import StockPriceCard from "@/components/stock/StockPriceCard";
@@ -14,11 +15,15 @@ export default async function StockDetailPage({params}: StockDetailPageProps){
     const detail = await getStockDetail(ticker);
     return (
         <div>
-            <StockDetailHeader detail={detail}/>
-            <StockPriceCard detail={detail}/>
-            <StockHistoryChart
+            {/* <StockDetailHeader detail={detail}/>
+            <StockPriceCard detail={detail}/> */}
+            {/* <StockHistoryChart
                 ticker={detail.ticker}
                 change={detail.change}
+                companyName={detail.companyName}
+            /> */}
+            <StockCandlestickChart
+                ticker={detail.ticker}
                 companyName={detail.companyName}
             />
         </div>

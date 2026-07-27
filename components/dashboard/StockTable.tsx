@@ -7,8 +7,11 @@ import { Link } from "lucide-react";
 import { RealtimePrice } from "@/types/RealtimePrice";
 import { getRealtimeStocks } from "@/services/stock.service";
 
-export default function StockTable() {
-    const [isLive, setIsLive] = useState(true);
+interface StockTableProps {
+    onView: (ticker:string) => void;
+}
+export default function StockTable({onView}: StockTableProps) {
+    // const [isLive, setIsLive] = useState(true);
     const [lastUpdate, setLastUpdate] = useState<Date | null>(null);
     const [stocks, setStocks] = useState<RealtimePrice[]>([]);
     const [loading, setLoading] = useState(true);
@@ -103,6 +106,7 @@ export default function StockTable() {
                             <StockTableRow
                                 key={stock.ticker}
                                 stock={stock}
+                                onView={onView}
                             />
                         ))}
                     </tbody>

@@ -42,7 +42,6 @@ export default function MarketOverview() {
     const vnIndex = indexes.find(item => item.symbol === "VNINDEX");
     const isUp = (vnIndex?.change ?? 0) >= 0;
     const lineColor = isUp? "var(--color-up)": "var(--color-down)";
-    console.log(chartData)
     if (loading) {
         return (
             <section className={styles.container}>

@@ -1,0 +1,271 @@
+.container {
+    background: white;
+    border-radius: 16px;
+    padding: 24px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.06);
+    max-width: 1200px;
+    margin: 0 auto;
+    transition: all 0.3s ease;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.titleSection {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.title {
+    font-size: 24px;
+    font-weight: 700;
+    color: #111827;
+    margin: 0;
+    font-family: Inter, sans-serif;
+}
+
+.ticker {
+    font-size: 16px;
+    font-weight: 600;
+    color: #6B7280;
+    background: #F3F4F6;
+    padding: 4px 12px;
+    border-radius: 6px;
+    font-family: Inter, sans-serif;
+}
+
+.rangeSelector {
+    display: flex;
+    gap: 4px;
+    background: #F9FAFB;
+    padding: 4px;
+    border-radius: 8px;
+    border: 1px solid #E5E7EB;
+}
+
+.rangeButton {
+    padding: 6px 16px;
+    border: none;
+    background: transparent;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #6B7280;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-family: Inter, sans-serif;
+}
+
+.rangeButton:hover {
+    color: #111827;
+    background: rgba(0, 0, 0, 0.05);
+}
+
+.rangeButtonActive {
+    background: white;
+    color: #111827;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.statsGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 16px;
+    margin-bottom: 24px;
+}
+
+.statCard {
+    background: #F9FAFB;
+    padding: 12px 16px;
+    border-radius: 8px;
+    border: 1px solid #E5E7EB;
+}
+
+.statLabel {
+    font-size: 12px;
+    font-weight: 500;
+    color: #6B7280;
+    margin: 0 0 4px 0;
+    font-family: Inter, sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.statValue {
+    font-size: 18px;
+    font-weight: 700;
+    color: #111827;
+    margin: 0;
+    font-family: Inter, sans-serif;
+}
+
+.statValuePositive {
+    font-size: 18px;
+    font-weight: 700;
+    color: #10B981;
+    margin: 0;
+    font-family: Inter, sans-serif;
+}
+
+.statValueNegative {
+    font-size: 18px;
+    font-weight: 700;
+    color: #EF4444;
+    margin: 0;
+    font-family: Inter, sans-serif;
+}
+
+.statPercent {
+    font-size: 13px;
+    font-weight: 500;
+    margin-left: 4px;
+    opacity: 0.8;
+}
+
+.chartWrapper {
+    width: 100%;
+    height: auto;
+    background: white;
+    border-radius: 8px;
+}
+
+.loadingContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 500px;
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.loadingSpinner {
+    width: 40px;
+    height: 40px;
+    border: 4px solid #E5E7EB;
+    border-top: 4px solid #3B82F6;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.loadingText {
+    margin-top: 16px;
+    color: #6B7280;
+    font-size: 16px;
+    font-family: Inter, sans-serif;
+}
+
+.errorContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 500px;
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.errorText {
+    color: #EF4444;
+    font-size: 16px;
+    font-family: Inter, sans-serif;
+    padding: 16px;
+    background: #FEF2F2;
+    border-radius: 8px;
+    border: 1px solid #FCA5A5;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 16px;
+        border-radius: 12px;
+    }
+
+    .header {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .titleSection {
+        justify-content: center;
+    }
+
+    .title {
+        font-size: 20px;
+    }
+
+    .rangeSelector {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .rangeButton {
+        padding: 4px 12px;
+        font-size: 12px;
+    }
+
+    .statsGrid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 8px;
+    }
+
+    .statCard {
+        padding: 8px 12px;
+    }
+
+    .statValue,
+    .statValuePositive,
+    .statValueNegative {
+        font-size: 14px;
+    }
+
+    .statValueNegative {
+        font-size: 14px;
+    }
+
+    .statValuePositive {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .statsGrid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .statCard {
+        padding: 6px 10px;
+    }
+
+    .statValue,
+    .statValuePositive,
+    .statValueNegative {
+        font-size: 12px;
+    }
+
+    .statPercent {
+        font-size: 10px;
+    }
+
+    .container {
+        padding: 12px;
+        border-radius: 8px;
+    }
+}
