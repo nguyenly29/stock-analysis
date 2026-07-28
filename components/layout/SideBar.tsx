@@ -11,7 +11,7 @@ export default function SideBar() {
             </div>
             <div className={style.stock}>
                 <ChartNoAxesCombined/>
-                <Link href="/stock">Stock</Link>
+                <Link href="./stockviews">Stock</Link>
             </div>
             <div className={style.watchlist}>
                 <LayoutList/>
