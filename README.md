@@ -35,6 +35,7 @@ The easiest way to deploy your Next.js app is to use the [Vercel Platform](https
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
 
+
 ```
 stock-analysis
 ├─ AGENTS.md
@@ -42,21 +43,46 @@ stock-analysis
 │  ├─ favicon.ico
 │  ├─ globals.css
 │  ├─ layout.tsx
-│  ├─ overview
+│  ├─ overviews
+│  │  ├─ page.module.css
 │  │  └─ page.tsx
-│  └─ page.tsx
+│  ├─ page.tsx
+│  ├─ stocks
+│  │  └─ [ticker]
+│  │     └─ page.tsx
+│  └─ stockviews
+│     └─ page.tsx
 ├─ CLAUDE.md
 ├─ components
 │  ├─ dashboard
-│  │  ├─ SummaryCard.module.css
-│  │  ├─ SummaryCard.tsx
-│  │  ├─ SummarySection.module.css
-│  │  └─ SummarySection.tsx
-│  └─ layout
-│     ├─ Header.module.css
-│     ├─ Header.tsx
-│     ├─ SideBar.module.css
-│     └─ SideBar.tsx
+│  │  ├─ ChartTooltip.module.css
+│  │  ├─ ChartTooltip.tsx
+│  │  ├─ MarketMovers.module.css
+│  │  ├─ MarketMovers.tsx
+│  │  ├─ MarketOverview.module.css
+│  │  ├─ MarketOverview.tsx
+│  │  ├─ MarketTicker.module.css
+│  │  ├─ MarketTicker.tsx
+│  │  ├─ StockCandlestickChart.module.css
+│  │  ├─ StockCandlestickChart.tsx
+│  │  ├─ StockTable.module.css
+│  │  ├─ StockTable.tsx
+│  │  ├─ StockTableRow.module.css
+│  │  ├─ StockTableRow.tsx
+│  │  ├─ TooltipStockHistory.module.css
+│  │  └─ TooltipStockHistory.tsx
+│  ├─ layout
+│  │  ├─ Header.module.css
+│  │  ├─ Header.tsx
+│  │  ├─ SideBar.module.css
+│  │  └─ SideBar.tsx
+│  └─ stock
+│     ├─ StockHeader.module.css
+│     └─ StockHeader.tsx
+├─ data
+│  ├─ mock-history.ts
+│  ├─ mock-market-index.ts
+│  └─ mock-stocks.ts
 ├─ eslint.config.mjs
 ├─ lib
 │  └─ api.ts
@@ -73,10 +99,13 @@ stock-analysis
 ├─ README.md
 ├─ services
 │  ├─ dashboard.service.ts
+│  ├─ market.service.ts
 │  └─ stock.service.ts
 ├─ tsconfig.json
 └─ types
    ├─ DashboardSummary.ts
+   ├─ MarketHistory.ts
+   ├─ MarketIndexItem.ts
    ├─ PriceHistoryPoint.ts
    ├─ RealtimePrice.ts
    └─ StockDetail.ts
