@@ -1,11 +1,22 @@
 .content {
     display: flex;
     justify-content: left;
-    gap: 10px;
+    gap: 20px;
     align-items: center;
+    margin-top: 20px;
 }
 
 .image img {
     width: 200;
     height: 100;
+    box-shadow: var(--shadow);
 }
+
+.itemContent .title{
+    font-size: 15px;
+    font-weight: 600;
+}
+/* 
+.itemContent .summary {
+    color: #3B82F6;
+} */

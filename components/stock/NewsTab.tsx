@@ -3,6 +3,7 @@ import { News } from "@/types/News";
 import { useEffect, useState } from "react";
 import styles from './NewsTab.module.css';
 import Image from "next/image";
+import Link from "next/link";
 
 export default function NewsTab() {
     const [news, setNews] = useState<News[]>([]);
@@ -38,11 +39,15 @@ export default function NewsTab() {
                         ) : (<div className={styles.noImg}>Not Found</div>)}
                     </div>
                     <div className={styles.itemContent}>
-                        <h1>{item.title}</h1>
-                        <i>{item.summary}</i>
-                        <p>{item.content}</p>
-                        <p>{item.source}</p>
-                        <p>{item.publishedAt}</p>
+                        <h1 className={styles.title}>{item.title}</h1>
+                        <i className={styles.summary}>{item.summary}</i>
+                        <p className={styles.contentItem}>{item.content}</p>
+                        {item.sourceUrl && (
+                            <Link className={styles.source} href={item.sourceUrl} target="_blank" rel='nooper noreferrer' >
+                                Nguồn: <i style={{color:'#3B82F6', textDecoration:'underline'}}>{item.source}</i>
+                            </Link>
+                        )}
+                        <p className={styles.publishedAt}>{new Date(item.publishedAt).toLocaleString("vi-VN")}</p>
                     </div>
                 </div>
             ))}
