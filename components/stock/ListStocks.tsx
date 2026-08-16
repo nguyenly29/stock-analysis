@@ -8,6 +8,7 @@ import { ChevronLeft, ChevronRight, RefreshCw, Search, X } from 'lucide-react';
 import { StockDetail } from '@/types/StockDetail';
 import CandlestickChartTab from './CandlestickChartTab';
 import InfoTab from './InfoTab';
+import NewsTab from './NewsTab';
 
 interface StockTabs {
     detail: StockDetail;
@@ -292,6 +293,9 @@ export default function ListStocks({detail, onClose}: StockTabs) {
                                 )}
                                 {activeTab === 'profile' && (
                                     <InfoTab ticker={stockDetail.ticker}/>
+                                )}
+                                {activeTab === 'new' && (
+                                    <NewsTab />
                                 )}
                             </>
                         ) : (

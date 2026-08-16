@@ -18,3 +18,37 @@
     margin-top: 10px;
 }
 
+.table table {
+    width: 100%;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    background-color: var(--bg-card);
+}
+
+.table h1 {
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.table thead {
+    background-color: #f8fafc;
+}
+
+.table th {
+    padding: 14px 16px;
+    text-align: center;
+    font-size: 13px;
+    font-weight: 600;
+    color: #475569;
+    border-bottom: 1px solid #e2e8f0;
+    white-space: nowrap;
+}
+
+.table td {
+    text-align: center;
+    padding: 14px 16px;
+}
+
+.content {
+    margin-top: 5px;
+}

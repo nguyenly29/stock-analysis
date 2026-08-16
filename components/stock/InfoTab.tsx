@@ -65,8 +65,8 @@ export default function InfoTab({ticker}: InfoTabProps) {
                 </table>
             </div>
             <div className={styles.content}>
-                <p>Website: {stockInfo?.website}</p>
-                <p>{stockInfo?.description}</p>
+                <i><p>Website: {stockInfo?.website}</p></i>
+                <i><p>{stockInfo?.description}</p></i>
             </div>
         </div>
     );
