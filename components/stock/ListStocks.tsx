@@ -4,11 +4,12 @@ import { RealtimePrice } from '@/types/RealtimePrice';
 import styles from './ListStocks.module.css';
 import { useEffect, useState } from 'react';
 import { getRealtimeStocks, getStockDetail } from '@/services/stock.service';
-import { ChevronLeft, ChevronRight, RefreshCw, Search, X } from 'lucide-react';
+import { ChevronLeft, ChevronRight, Eye, RefreshCw, Search, X } from 'lucide-react';
 import { StockDetail } from '@/types/StockDetail';
 import CandlestickChartTab from './CandlestickChartTab';
 import InfoTab from './InfoTab';
 import NewsTab from './NewsTab';
+import WatchlistButton from '../shared/WatchlistButton';
 
 interface StockTabs {
     detail: StockDetail;
@@ -17,7 +18,7 @@ interface StockTabs {
 
 type Tab = 'profile' | 'chart' | 'new';
 
-export default function ListStocks({detail, onClose}: StockTabs) {
+export default function ListStocks() {
     const [listStocks, setListStocks] = useState<RealtimePrice[]>([]);
     const [loading, setLoading] = useState(true);
     const [currentPage, setCurrentPage] = useState(1);
@@ -240,13 +241,15 @@ export default function ListStocks({detail, onClose}: StockTabs) {
                                         <td>{formatPrice(item.previousClose)}</td>
                                         <td>{formatNumber(item.marketCap)}</td>
                                         <td>{formatNumber(item.volume)}</td>
-                                        <td >
+                                        <td className={styles.iconActions}>
                                             <button
                                                 className={styles.viewButton}
                                                 onClick={() => handleViewDetail(item.ticker)}
                                             >
-                                                View
+                                                <Eye size={20}/>
                                             </button>
+                                            /
+                                            <WatchlistButton ticker={item.ticker} />
                                         </td>
                                     </tr>
                                 ))}

@@ -7,7 +7,7 @@ export default function StockView(){
         <div>
             <StockHeader/>
             <ListStocks/>
-            <StockFooter/>
+            {/* <StockFooter/> */}
         </div>
     )
 }

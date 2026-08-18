@@ -15,7 +15,7 @@ export default function SideBar() {
             </div>
             <div className={style.watchlist}>
                 <LayoutList/>
-                <Link href="/watchlist">Watchlist</Link>
+                <Link href="/watchlists">Watchlist</Link>
             </div>
             <div className={style.setting}>
                 <Settings/>

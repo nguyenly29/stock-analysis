@@ -539,6 +539,12 @@
     background: #111827;
 }
 
+.iconActions {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    gap: 5px
+}
 /* Animations */
 @keyframes fadeIn {
     from { opacity: 0; }

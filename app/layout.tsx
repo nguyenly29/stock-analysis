@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import SideBar from "@/components/layout/SideBar";
 import Header from "@/components/layout/Header";
+import { WatchlistProvider } from "@/hooks/Watchlist";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -30,13 +31,15 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body>
-        <Header/>
-        <div className="appContainer">
-          <SideBar/>
-          <main className="mainContent">
-            {children}
-          </main>
-        </div>
+        <WatchlistProvider>
+          <Header/>
+          <div className="appContainer">
+            <SideBar/>
+            <main className="mainContent">
+              {children}
+            </main>
+          </div>
+        </WatchlistProvider>
       </body>
     </html>
   );

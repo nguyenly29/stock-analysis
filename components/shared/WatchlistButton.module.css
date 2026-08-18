@@ -1,0 +1,37 @@
+.watchlistBtn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #9CA3AF;
+  transition: all 0.2s ease;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+}
+
+.watchlistBtn:hover {
+  color: #F59E0B;
+  background: rgba(245, 158, 11, 0.1);
+}
+
+.watchlistBtn.active {
+  color: #F59E0B;
+}
+
+.watchlistBtn.animate {
+  animation: pop 0.3s ease;
+}
+
+@keyframes pop {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.4);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
