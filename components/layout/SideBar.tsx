@@ -1,6 +1,6 @@
 import Link from "next/link";
 import style from "./SideBar.module.css";
-import { ChartNoAxesCombined, LayoutDashboard, LayoutList, Settings } from "lucide-react";
+import { ChartNoAxesCombined, LayoutDashboard, LayoutList, MonitorCog } from "lucide-react";
 
 export default function SideBar() {
     return (
@@ -18,8 +18,8 @@ export default function SideBar() {
                 <Link href="/watchlists">Watchlist</Link>
             </div>
             <div className={style.setting}>
-                <Settings/>
-                <Link href="/setting">Settings</Link>
+                <MonitorCog/>
+                <Link href="/activitys">Activity</Link>
             </div>
         </div>
     )

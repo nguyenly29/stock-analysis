@@ -1,0 +1,242 @@
+.container {
+    background-color: var(--bg-card);
+}
+
+.header {
+    padding: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header .title{
+    color: var(--text-main);
+}
+
+.title h1 {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--text-main, #111827);
+    margin: 0;
+    letter-spacing: 0.5px;
+}
+
+.title p {
+    font-size: 13px;
+    color: var(--text-secondary, #787B86);
+    margin: 2px 0 0 0;
+}
+
+/* Clear button */
+.clearBtn button {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 18px;
+    background: var(--color-danger, #dc2626);
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.clearBtn button:hover {
+    background: #b91c1c;
+}
+
+.clearBtn button:active {
+    transform: scale(0.96);
+}
+
+.tableWrapper {
+    flex: 1;
+    overflow-x: auto;
+    padding: 0 4px 4px 4px;
+}
+
+.tableWrapper table {
+    width: 100%;
+    border-collapse: collapse;
+    font: 14px;
+}
+
+.tableWrapper thead th {
+    text-align: center;
+    padding: 8px 12px;
+    border: 1px solid var(--color-border);
+    font-weight: 700;
+    font-size: 12px;
+    background-color: rgb(202, 199, 199);
+} 
+
+.tableWrapper tbody td {
+    text-align: center;
+    padding: 8px 12px;
+    border: 1px solid var(--color-border);
+    font-weight: 600;
+    font-size: 12px;
+} 
+
+.tableWrapper table tbody tr:hover{
+    box-shadow: var(--shadow);
+    color:#667eea
+}
+
+/* ============================================
+   PAGINATION CONTAINER
+   ============================================ */
+.pagination {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 5px;
+    border-top: 1px solid #e8ecf1;
+    background: #f8fafc;
+}
+
+/* ============================================
+   DISPLAY PAGE (Left side)
+   ============================================ */
+.displayPage {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    color: #6b7280;
+}
+
+.displayPage select {
+    padding: 4px 8px;
+    border: 1px solid #e8ecf1;
+    border-radius: 6px;
+    background: white;
+    color: #1a1a2e;
+    font-size: 13px;
+    cursor: pointer;
+    outline: none;
+    transition: border-color 0.2s ease;
+}
+
+.displayPage select:focus {
+    border-color: #667eea;
+}
+
+.displayPage select:hover {
+    border-color: #667eea;
+}
+
+/* ============================================
+   PAGE BUTTONS (Right side)
+   ============================================ */
+.pageBtn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+}
+
+/* Nút Previous / Next */
+.btnLeft,
+.btnRight {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border: 1px solid #e8ecf1;
+    border-radius: 6px;
+    background: white;
+    color: #1a1a2e;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-size: 14px;
+}
+
+.btnLeft:hover:not(:disabled),
+.btnRight:hover:not(:disabled) {
+    background: #f0f2f5;
+    border-color: #667eea;
+}
+
+.btnLeft:disabled,
+.btnRight:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+/* Số trang (các button do map tạo ra) */
+.pageBtn button:not(.btnLeft):not(.btnRight) {
+    min-width: 32px;
+    height: 32px;
+    padding: 0 8px;
+    border: 1px solid #e8ecf1;
+    border-radius: 6px;
+    background: white;
+    color: #1a1a2e;
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.pageBtn button:not(.btnLeft):not(.btnRight):hover {
+    background: #f0f2f5;
+    border-color: #667eea;
+}
+
+.pageBtn button:not(.btnLeft):not(.btnRight).active {
+    background: #667eea;
+    color: white;
+    border-color: #667eea;
+}
+
+/* Dấu ... */
+.pageDots {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 32px;
+    height: 32px;
+    color: #9ca3af;
+    font-size: 13px;
+}
+
+/* ActivityMonitor.module.css */
+
+.loadingCell {
+    text-align: center;
+    padding: 40px 0;
+    color: var(--text-secondary, #787B86);
+    font-size: 15px;
+}
+
+.emptyCell {
+    text-align: center;
+    padding: 40px 0;
+    color: var(--text-secondary, #787B86);
+    font-size: 15px;
+}
+
+/* Spinner (tùy chọn) */
+.spinner {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    border: 3px solid var(--color-border, #e5e7eb);
+    border-top-color: var(--color-up, #00B1A4);
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+    margin-right: 10px;
+    vertical-align: middle;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
